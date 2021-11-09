@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind variants;
+
+@layer base {
+    :root {
+        --primary-color: #191919;
+    }
+    
+    @media only screen and (max-width: 320px) {
+        html, body {
+            font-size: 14px;
+        }
+    }
+
+    input, select {
+        -webkit-appearance: none;
+    }
+
+    p, h1, h2, span, input, label {
+        @apply text-neutral-900;
+    }
+
+    button {
+        @apply transform transition-all duration-200;
+    }
+    button:active {
+        @apply scale-95;
+    }
+    button:focus {
+        @apply outline-none;
+    }
+    
+    /* width */
+    .light-scroll::-webkit-scrollbar {
+        width: 4px;
+        height: 4px;
+        opacity: 0;
+    }
+
+    /* Track */
+    .light-scroll::-webkit-scrollbar-track {
+        background: rgba(0,0,0,0); 
+        border-radius: 2px;
+    }
+
+    /* Handle */
+    .light-scroll::-webkit-scrollbar-thumb {
+        background: #D7D7D7; 
+        border-radius: 4px;
+    }
+
+    /* Handle on hover */
+    .light-scroll::-webkit-scrollbar-thumb:hover {
+        background: #D7D7D7; 
+    }
+}
+
+@layer components {
+    /* Textos */
+    .headline1 {
+        @apply text-lg font-bold;
+    }
+    .title {
+        @apply font-medium;
+    }
+    .subtitle {
+        @apply text-xs opacity-50;
+    }
+
+    /* Mensagens */
+    .received-message {
+        @apply w-full flex px-4 transition-all duration-300;
+    }
+    .received-message_avatar {
+        @apply w-15 h-15 rounded-full bg-center bg-cover bg-no-repeat shadow-lg;
+    }
+    .received-message_content {
+        @apply px-4 py-2 rounded-xl bg-neutral-200 border border-neutral-300 shadow-100 break-words;
+    }
+
+    .sended-message {
+        @apply mb-1 flex flex-col items-end w-full pr-11 transition-all duration-300;
+    }
+    .sended-message_content {
+        @apply px-4 py-2 rounded-xl bg-white border border-neutral-300 shadow-100 max-w-[calc(75%-3.75rem)] break-words;
+    }
+
+    /* Section */
+    .panel {
+        @apply w-full md:w-64 2xl:w-76;
+    }
+    .section {
+        @apply  w-full md:w-76 2xl:w-96;
+    }
+    .tag {
+        @apply bg-neutral-200 h-8 px-3 rounded-lg border border-gray-300 flex items-center text-gray-500 font-medium text-sm mr-2 mb-2;
+    }
+
+}
